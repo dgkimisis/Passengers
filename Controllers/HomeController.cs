@@ -56,15 +56,15 @@ namespace Passengers.Controllers
             using (PassengerContext ntx = new PassengerContext())
             {
                 //Fast Way
-                //ntx.Database.ExecuteSqlCommand("TRUNCATE TABLE [Passengers]");
+                ntx.Database.ExecuteSqlCommand("TRUNCATE TABLE [Passengers]");
 
                 //Slow way
-                var rows = from o in ntx.Passengers
-                           select o;
-                foreach (var row in rows)
-                {
-                    ntx.Passengers.Remove(row);
-                }
+                //var rows = from o in ntx.Passengers
+                //           select o;
+                //foreach (var row in rows)
+                //{
+                //    ntx.Passengers.Remove(row);
+                //}
                 ntx.SaveChanges();
                 return Redirect("About");
             }
