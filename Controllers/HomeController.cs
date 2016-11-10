@@ -4,25 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Passengers.Models;
+using System.Data.Entity;
 
 namespace Passengers.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        public ActionResult Index()
-        {
-            return View(new Passenger());
-        }
+        
 
 
-        public ActionResult About()
-        {
-            return View();
-        }
-
-
-
+        //We add new Passengers Individually in Passengers Table
         [HttpPost]
         public ActionResult AddIndex(Passenger d)
         {
@@ -36,6 +27,47 @@ namespace Passengers.Controllers
             return View("Index", d);
         }
 
-        //HTTPGET We get the list of passengers from the list in Results page
+        public ActionResult Index()
+        {
+            return View(new Passenger());
+        }
+
+
+        //We display the table items as a list in the About Page
+        [HttpGet]
+        public ActionResult About()
+        {
+            using (PassengerContext ntx = new PassengerContext())
+            {
+                try
+                {
+                    return View(ntx.Passengers.ToList());
+                }
+                catch
+                {
+                   return View();
+                }
+            }
+        }
+
+        //Clear Passenger Table
+        public ActionResult Clear()
+        {
+            using (PassengerContext ntx = new PassengerContext())
+            {
+                //Fast Way
+                //ntx.Database.ExecuteSqlCommand("TRUNCATE TABLE [Passengers]");
+
+                //Slow way
+                var rows = from o in ntx.Passengers
+                           select o;
+                foreach (var row in rows)
+                {
+                    ntx.Passengers.Remove(row);
+                }
+                ntx.SaveChanges();
+                return Redirect("About");
+            }
+        }
     }
 }
