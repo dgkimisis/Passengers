@@ -1,0 +1,25 @@
+@model Passengers.Models.Passenger
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form method="post" action="@Url.Action("AddIndex", "Home")">
+        <div>
+            <label for="Name">First Name:</label>
+            <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="Dice Name" value="@Model.FirstName">
+
+            <label for="CreationYear">Last Name:</label>
+            <input type="text" name="LastName" class="form-control" id="LastName" placeholder="Dice Name" value="@Model.LastName">
+
+            @*<input type="hidden" name="Id" class="form-control" id="Id" value="@Model.Id">*@
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>    
+    </form>
+</body>
+</html>
+
