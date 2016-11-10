@@ -9,17 +9,19 @@
 <body>
     <form method="post" action="@Url.Action("AddIndex", "Home")">
         <div>
-            <label for="Name">First Name:</label>
-            <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="Dice Name" value="@Model.FirstName">
+            <label for="Name" style="margin-left:100px;">First Name:</label>
+            <input type="text" style="margin-left:100px;" name="FirstName" class="form-control" id="FirstName" placeholder="Dice Name" value="@Model.FirstName">
+            <br />
+            <label for="Name" style="margin-left:100px;">Last Name:</label>
+            <input type="text" style="margin-left:100px;" name="LastName" class="form-control" id="LastName" placeholder="Dice Name" value="@Model.LastName">
+            <br />
 
-            <label for="CreationYear">Last Name:</label>
-            <input type="text" name="LastName" class="form-control" id="LastName" placeholder="Dice Name" value="@Model.LastName">
-
-            @*<input type="hidden" name="Id" class="form-control" id="Id" value="@Model.Id">*@
-
-            <button type="submit" class="btn btn-default">Submit</button>
-        </div>    
+            <button type="submit" style="margin-bottom:30px; margin-left:100px;">Add Passenger</button>
+        </div>
     </form>
+    <form method="get" action="@Url.Action("About", "Home")">
+    <button type="submit" style="margin-left:100px;">Go to Passengers Overview</button>
+</form>
+
 </body>
 </html>
-
