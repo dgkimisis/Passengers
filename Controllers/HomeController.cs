@@ -10,8 +10,8 @@ namespace Passengers.Controllers
 {
     public class HomeController : Controller
     {
-       
-        //We add new Passengers Individually in Passengers Table
+
+        //We add new Passengers Individually in Passengers Table / Start
         [HttpPost]
         public ActionResult AddIndex(Passenger d)
         {
@@ -22,13 +22,13 @@ namespace Passengers.Controllers
                 db.Passengers.Add(pas);
                 db.SaveChanges();
             }
-            return View("Index", d);
+            return View("Index");
         }
-
         public ActionResult Index()
         {
-            return View(new Passenger());
+            return View();
         }
+        //We add new Passengers Individually in Passengers Table / Finish
 
 
         //We display the table items as a list in the About Page
@@ -43,7 +43,7 @@ namespace Passengers.Controllers
                 }
                 catch
                 {
-                   return View();
+                    return View();
                 }
             }
         }
