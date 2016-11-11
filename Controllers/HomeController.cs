@@ -10,9 +10,7 @@ namespace Passengers.Controllers
 {
     public class HomeController : Controller
     {
-        
-
-
+       
         //We add new Passengers Individually in Passengers Table
         [HttpPost]
         public ActionResult AddIndex(Passenger d)
@@ -51,6 +49,7 @@ namespace Passengers.Controllers
         }
 
         //Clear Passenger Table
+        [HttpGet]
         public ActionResult Clear()
         {
             using (PassengerContext ntx = new PassengerContext())
