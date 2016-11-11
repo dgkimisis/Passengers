@@ -13,6 +13,8 @@ Add New Database with the name PDB
 -Add-Migration <name>   (fex Add-Migration InIt)
 -Update-Database
 ..in order to create the table Passengers based on PassengerContext DbSet<passenger> Passengers 
+(Migration folder is being created with two files. Configuration.cs and <a big number>InIt.cs)
+Now our database has an empty table called Passengers
 8. We create HomeController.cs in Controller tab
 9. We already have an Index.cshtml within views -> Home and we also create an About.cshtml
 
