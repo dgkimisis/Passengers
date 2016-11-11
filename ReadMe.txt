@@ -12,7 +12,7 @@ Add New Database with the name PDB
 -Enable-Migrations
 -Add-Migration <name>   (fex Add-Migration InIt)
 -Update-Database
-..in order to create the model classed(here just Passenger class)
+..in order to create the table Passengers based on PassengerContext DbSet<passenger> Passengers 
 8. We create HomeController.cs in Controller tab
 9. We already have an Index.cshtml within views -> Home and we also create an About.cshtml
 
