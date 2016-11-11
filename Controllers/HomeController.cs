@@ -11,7 +11,7 @@ namespace Passengers.Controllers
     public class HomeController : Controller
     {
 
-        //We add new Passengers Individually in Passengers Table / Start
+        //We add new Passengers Individually in Passengers Table
         [HttpPost]
         public ActionResult AddIndex(Passenger d)
         {
@@ -28,7 +28,6 @@ namespace Passengers.Controllers
         {
             return View();
         }
-        //We add new Passengers Individually in Passengers Table / Finish
 
 
         //We display the table items as a list in the About Page
