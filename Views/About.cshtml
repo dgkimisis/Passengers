@@ -31,16 +31,19 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-        </tr>
+        </tr>    
         @foreach (var item in Model)
         {
             <tr>
+                     @*Here we execute the Controller Method About(). We do not declare it because
+                    by default, the About.cshtml is looking into Controller Method About()*@
                 <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
                 <td>@Html.DisplayFor(modelItem => item.LastName)</td>
             </tr>
         }
     </table>
-
+    @*Here we execute the Controller Method Index() and we also declare the Home folder
+        (the foldex which Index is placed within)*@
     <form method="get" action="@Url.Action("Index", "Home")">
         <button type="submit" style="margin-bottom:15px; margin-left:100px;">Add more passengers</button>
     </form>
