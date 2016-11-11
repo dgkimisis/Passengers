@@ -8,6 +8,8 @@
 </head>
 <body>
     <h4 style="margin-left:100px;">PASSENGER DETAILS</h4>
+        @*Here we execute the Controller Method AddIndex() and we also declare the Home folder
+    (the foldex which Index is placed within)*@
     <form method="post" action="@Url.Action("AddIndex", "Home")">
         <div>
             <label for="Name" style="margin-left:100px;">First Name:</label>
@@ -20,6 +22,8 @@
             <button type="submit" style="margin-bottom:30px; margin-left:100px;">Add Passenger</button>
         </div>
     </form>
+        @*Here we execute the Controller Method About() and we also declare the Home folder
+        (the foldex which Index is placed)*@
     <form method="get" action="@Url.Action("About", "Home")">
         <button type="submit" style="margin-left:100px;">Go to Passengers Overview</button>
     </form>
