@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Passengers20161208021821" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\gkim\\Desktop\\Passengers\\Passengers\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\gkim\\Desktop\\Passengers\\Passengers\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="PassengerContext-Web.config Connection String" description="" value="Data Source=DESKTOP-4AS8PK4;Initial Catalog=PDB;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\gkim\\Desktop\\Passengers\\Passengers\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PassengerContext']/@connectionString" />
+  </parameter>
+</parameters>
